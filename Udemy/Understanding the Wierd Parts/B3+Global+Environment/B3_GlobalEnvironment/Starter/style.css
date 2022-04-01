@@ -1,0 +1,54 @@
+* {
+    margin: 20px;
+}
+
+strong {
+    display: inline;
+    margin: 50px;
+}
+
+p {
+    font-family: Arial;
+    text-align: center;
+    /* color: chocolate; */
+
+}
+
+html {
+    background-color: rgb(255, 0, 0);
+    color: white;
+}
+
+h2 {
+    text-align: center;
+
+}
+
+h1 {
+    /* width: 45%; */
+    background-color: yellowgreen;
+    color: blue;
+    text-align: center;
+    padding: 10px;
+    border: 3px grey solid;
+}
+
+.small {
+    width: 60%;
+    margin: 20px auto 0 auto;
+    display: block;
+}
+
+.contact {
+    display: block;
+    margin: 20px auto;
+    width: 30%;
+    font-size: large;
+
+}
+
+.contact:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
