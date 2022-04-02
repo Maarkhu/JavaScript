@@ -10,3 +10,6 @@ const sum = grades
         result += num
     });
 console.log(result / grades.length)
+
+const highGrades = grades.filter(num => num >= 4).forEach((num, i, arr) => console.log(num));
+// bez forEach console.log(highGrades);
