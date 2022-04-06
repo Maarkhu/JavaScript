@@ -1,7 +1,5 @@
 const bookNum = prompt('Wpisz numer ISBN swojej książki');
 
-
-
 fetch(`https:www.googleapis.com/books/v1/volumes?q=isbn:${bookNum}`)
     .then((response) => response.json())
     .then((data) => {
