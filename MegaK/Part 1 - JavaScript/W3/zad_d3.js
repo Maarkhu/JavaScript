@@ -5,5 +5,5 @@ async function responsable() {
     const data = await response.json();
     console.log(`${data.items[0].volumeInfo.authors[0]} jest autorem książki o tytule: ${data.items[0].volumeInfo.title}`)
 
-}
+};
 responsable();
