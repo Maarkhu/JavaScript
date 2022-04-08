@@ -7,14 +7,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .clicked {
+        .dark-site {
             background-color: black;
             color: white;
+        }
+
+        .btn-toggle-color {
+            border-radius: 5px;
+            border: 2px black solid;
+        }
+
+        .btn-toggle-color:hover {
+            display: inline-block;
+            color: white;
+            background-color: black;
+            transition: 0.3s;
+            border: 2px white solid;
+            box-shadow: 4px 4px yellow, -4px -4px yellow;
+        }
+
+        .red-body {
+            background-color: red;
+            color: blue;
         }
     </style>
 </head>
 
 <body>
+    <header>
+        <h1 class="counter">
+            A taki licznik:
+        </h1>
+    </header>
     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. </p>
     <p class="second-p highlight">Cupiditate at veniam saepe. Commodi est veniam iusto quaerat suscipit vel porro
         voluptates,
@@ -22,7 +46,7 @@
         labore maxime iure iste.</p>
     <p>Debitis ducimus fugiat earum ratione provident vero reprehenderit incidunt doloribus. Totam, nam neque ullam
         delectus mollitia exercitationem velit at corporis voluptatibus?</p>
-    <button>Click me!</button>
+    <button class='btn-toggle-color'>Turn to dark mode</button>
     <script src="Dom1.js"></script>
 </body>
 

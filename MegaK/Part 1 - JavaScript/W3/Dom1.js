@@ -41,3 +41,21 @@
 // false
 // secondP.classList.toggle('crazy-stuff');
 // true
+const btn = document.querySelector('.btn-toggle-color');
+const h1 = document.querySelector('.counter');
+const body = document.body;
+let i = 0;
+btn.addEventListener('click', () => {
+    const isDark = body.classList.toggle('dark-site');
+    h1.innerText = `A taki licznik: ${++i}`
+    if (i < 20) {
+        if (isDark) {
+            btn.innerText = 'Turn to light mode';
+        } else {
+            btn.innerText = 'Turn to dark mode';
+        }
+    } else {
+        btn.innerText = '!Alert, you strucked a fire!'
+        body.classList.toggle('red-body');
+    }
+});
