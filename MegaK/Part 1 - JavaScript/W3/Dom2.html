@@ -6,11 +6,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            font-family: 'Helvetica', Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 5px grey solid;
+            border-radius: 10px;
+            background: linear-gradient(90deg, deeppink, red);
+        }
+
+        button {
+            background-color: grey;
+            color: black;
+            border-radius: 6px;
+            border: 2px solid;
+
+        }
+
+        button:hover {
+            color: antiquewhite;
+            background-color: black;
+            transition: 0.3s;
+        }
+    </style>
 </head>
 
 <body>
     <header>
-        <h1></h1>
+        <div class='container'>
+            <h1>Hej Man jak się dzisiaj czujesz?</h1>
+
+            <div id="lab-1" for="btn-1"> <button class='btn-1'>
+                    Świetnie
+                </button><span class="spn-1">0</span></div>
+
+            <div> <button class='btn-2'>
+                    Nie bardzo
+                </button><span class='spn-2'>0</span></div>
+
+            <p id="p-1"></p>
+        </div>
     </header>
 
 
