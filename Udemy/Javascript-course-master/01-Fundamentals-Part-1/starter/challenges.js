@@ -50,10 +50,12 @@ const koSc3 = 106;
 const avDoSc = (doSc1 + doSc2 + doSc3) / 3;
 const avKoSc = (koSc1 + koSc2 + koSc3) / 3;
 console.log(avDoSc.toFixed(1), avKoSc.toFixed(1));
-if (avDoSc > avKoSc) {
+if (avDoSc > avKoSc && avDoSc > 100) {
     console.log(`Dolphins won the competition. They have ${avDoSc.toFixed(1)} points!`)
-} else if (avDoSc < avKoSc) {
+} else if (avDoSc < avKoSc && avKoSc > 100) {
     console.log(`Koalas won the competition. They have ${avKoSc.toFixed(1)} points!`)
-} else if (avDoSc == avKoSc) {
+} else if (avDoSc === avKoSc && avKoSc > 100 && avDoSc > 100) {
     console.log(`Ladies and Gentelman there is a draw!`)
+} else {
+    console.log('Nobody wins!')
 }
