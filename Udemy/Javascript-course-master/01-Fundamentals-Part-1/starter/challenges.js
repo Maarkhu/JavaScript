@@ -40,22 +40,28 @@
 
 // #Challenge 3
 
-const doSc1 = 97;
-const doSc2 = 112;
-const doSc3 = 101;
-const koSc1 = 109;
-const koSc2 = 95;
-const koSc3 = 106;
+// const doSc1 = 97;
+// const doSc2 = 112;
+// const doSc3 = 101;
+// const koSc1 = 109;
+// const koSc2 = 95;
+// const koSc3 = 106;
 
-const avDoSc = (doSc1 + doSc2 + doSc3) / 3;
-const avKoSc = (koSc1 + koSc2 + koSc3) / 3;
-console.log(avDoSc.toFixed(1), avKoSc.toFixed(1));
-if (avDoSc > avKoSc && avDoSc > 100) {
-    console.log(`Dolphins won the competition. They have ${avDoSc.toFixed(1)} points!`)
-} else if (avDoSc < avKoSc && avKoSc > 100) {
-    console.log(`Koalas won the competition. They have ${avKoSc.toFixed(1)} points!`)
-} else if (avDoSc === avKoSc && avKoSc > 100 && avDoSc > 100) {
-    console.log(`Ladies and Gentelman there is a draw!`)
-} else {
-    console.log('Nobody wins!')
-}
+// const avDoSc = (doSc1 + doSc2 + doSc3) / 3;
+// const avKoSc = (koSc1 + koSc2 + koSc3) / 3;
+// console.log(avDoSc.toFixed(1), avKoSc.toFixed(1));
+// if (avDoSc > avKoSc && avDoSc > 100) {
+//     console.log(`Dolphins won the competition. They have ${avDoSc.toFixed(1)} points!`)
+// } else if (avDoSc < avKoSc && avKoSc > 100) {
+//     console.log(`Koalas won the competition. They have ${avKoSc.toFixed(1)} points!`)
+// } else if (avDoSc === avKoSc && avKoSc > 100 && avDoSc > 100) {
+//     console.log(`Ladies and Gentelman there is a draw!`)
+// } else {
+//     console.log('Nobody wins!')
+// }
+
+// #Challenge 4
+
+const price = Number(prompt('Wpisz cenę'));
+const tip = (price > 50 && price < 300) ? 0.15 * price : 0.20 * price;
+console.log(`The amount you should pay is ${price}, preferred tip: ${tip}. Your final payment: ${price + tip}.`);
