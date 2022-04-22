@@ -8,12 +8,21 @@ const buyAllBtn = document.querySelector('.btn-buy-all');
 //console.log([...buyBtns]);
 //addEventListener nie działa na tablicy tylko na konkretnym elemencie
 // buyBtns[0].addEventListener('click', () => {
-
+const removeItem = (event) => {
+    const id  = Number(event.target.dataset.id)
+    basket.remove(id);
+    createBasketUi();
+};
+//### Wyświetla objekt z identyfikatorem i tekstem (cału zmapowany koszyk przez
+//getBasketSummary
 const createBasketUi = () => {
     basketUl.innerText = ''
     for (const oneProductInfo of basket.getBasketSummary()) {
+        const {id, text} = oneProductInfo;
         const newLi = document.createElement('li')
-        newLi.innerText = oneProductInfo
+        newLi.addEventListener('click', removeItem)
+        newLi.dataset.id = oneProductInfo.id
+        newLi.innerText = oneProductInfo.text
         basketUl.appendChild(newLi)
     }
     const basketTotalValue = basket.getTotalValue();
@@ -36,6 +45,7 @@ const createBasketUi = () => {
 };
 
 //     console.log('Kliknięty')
+// ###Tworzy obiekt
 const addProductToBasket = event => {
         const name = event.target.dataset.name;
         const price = Number(event.target.dataset.price);
@@ -45,7 +55,8 @@ const addProductToBasket = event => {
     createBasketUi();
 }
 const buyAllProducts = () => {
-    alert(`Za`)
+    const basketTotalValue = basket.getTotalValue();
+    alert(`Zakupiono produkty o wartości ${basketTotalValue.toFixed(2)}zł.`)
     basket.clear();
     createBasketUi();
 }
