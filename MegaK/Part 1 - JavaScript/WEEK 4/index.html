@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
 </head>
 <body>
 <section class="products">
@@ -18,10 +19,10 @@
 </section>
 <section class="admin-add-product">
 <h1>Administracja: dodaj produkt</h1>
-    <form>
-        <input type="text" placeholder="Podaj nazwę" required>
-        <input type="number" placeholder="Podaj cenę..." required>
-        <input type="submit">
+    <form class="form-add-product">
+        <input type="text" name="product-name" placeholder="Podaj nazwę" required>
+        <input type="number" name='product-price' placeholder="Podaj cenę..." required>
+        <button type="submit">Dodaj</button>
     </form>
 </section>
 <section class="basket">
@@ -32,5 +33,6 @@
 </section>
 <script src="src/basket.js"></script>
 <script src="src/ui.js"></script>
+<script src="src/adminui.js"></script>
 </body>
 </html>
