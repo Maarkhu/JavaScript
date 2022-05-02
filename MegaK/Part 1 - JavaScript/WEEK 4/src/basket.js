@@ -1,16 +1,23 @@
 class Basket {
     constructor() {
-        this.items = [];
+        const ls = this.loadFromLocalStorage();
+        this.items = ls ? ls : [];
+        // this.items = ls || [];
+        // this.items = ls ?? []; null i undef operator
+        // this.items = this.loadFromLocalStorage() ?? [];
+
         this.totalValue = 0;
     }
     clear() {
         this.items.length = 0;
         // this.items.splice(0);
         // this.items = [];
+        this.saveToLocalStorage();
     }
     add (item) {
         this.items.push(item);
         this.addToTotalValue(item.price)
+        this.saveToLocalStorage();
     }
     addToTotalValue (newPrice) {
         this.totalValue += newPrice
@@ -28,6 +35,13 @@ class Basket {
                 }
             )
     }
+    saveToLocalStorage() {
+        localStorage.setItem('basket-items', JSON.stringify(this.items));
+    }
+   loadFromLocalStorage() {
+       return JSON.parse(localStorage.getItem('basket-items'))
+        }
+
     remove(no){
         this.items.splice(no - 1, 1);
     }
