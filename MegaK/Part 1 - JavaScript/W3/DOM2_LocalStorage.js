@@ -60,39 +60,37 @@ const span2 = document.querySelector('.spn-2');
 
 let counter = localStorage.getItem('counter');
 if (counter === null) {
-    counter = {
-        fajnie: 0,
-        dupowato: 0,
-    };
+  counter = {
+    fajnie: 0,
+    dupowato: 0,
+  };
 } else {
-    counter = JSON.parse(counter)
-};
+  counter = JSON.parse(counter);
+}
 
 function showInfo() {
-    const {
-        fajnie,
-        dupowato
-    } = counter;
-    p.innerText = `Do tej pory czułeś się ${fajnie} razy i dupowato ${dupowato} razy.`
-};
+  const {
+    fajnie,
+    dupowato,
+  } = counter;
+  p.innerText = `Do tej pory czułeś się ${fajnie} razy i dupowato ${dupowato} razy.`;
+}
 
 function saveInfo() {
-    localStorage.setItem('counter', JSON.stringify(counter))
-};
+  localStorage.setItem('counter', JSON.stringify(counter));
+}
 showInfo();
 
 btn1.addEventListener('click', () => {
-    span1.innerText = ++span1.innerText;
-    counter.fajnie++;
-    saveInfo();
-    showInfo();
-
+  span1.innerText = ++span1.innerText;
+  counter.fajnie++;
+  saveInfo();
+  showInfo();
 });
 
 btn2.addEventListener('click', () => {
-    span2.innerText = ++span2.innerText;
-    counter.dupowato++;
-    showInfo();
-    saveInfo();
-
+  span2.innerText = ++span2.innerText;
+  counter.dupowato++;
+  showInfo();
+  saveInfo();
 });

@@ -10,12 +10,11 @@
 
 // console.log('Żegnaj');
 
-
 setTimeout(() => {
-    console.log('Hello Word!')
+  console.log('Hello Word!');
 }, 1000);
 
 for (let i = 0; i < 10000; i++) {
-    console.log(i);
+  console.log(i);
 }
 console.log('Halo??');

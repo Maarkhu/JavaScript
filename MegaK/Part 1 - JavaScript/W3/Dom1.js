@@ -1,16 +1,16 @@
-//console
+// console
 
 // const secondP = document.querySelector('p.second-p')
 // undefined
 // secondP
 //     <
-//     p class = ​"second-p" > ​"Cupiditate at veniam saepe. Commodi est veniam iusto quaerat suscipit vel porro voluptates, nesciunt soluta, labore maxime iure iste." < /p>​
+//     p class = ​"second-p" > ​"Cupiditate at veniam saepe. Commodi est veniam iusto quaerat suscipit vel porro voluptates, nesciunt soluta, labore maxime iure iste." < /p>
 // secondP.style.fontSize = '2em';
 // '2em'
 // secondP.style.color = 'blue';
 // 'blue'
 
-//const secondP = document.querySelector('p.second-p')
+// const secondP = document.querySelector('p.second-p')
 // undefined
 // secondP.style.color = 'blue';
 // 'blue'
@@ -36,35 +36,34 @@
 // undefined
 // secondP.classList.contains('highlight');
 // false
-//Przełącznik
+// Przełącznik
 // secondP.classList.toggle('crazy-stuff');
 // false
 // secondP.classList.toggle('crazy-stuff');
 // true
 
-
 const btn = document.querySelector('.btn-toggle-color');
 const h1 = document.querySelector('.counter');
 const span = document.querySelector('.sp-1');
-const body = document.body;
-//localStorage changes
+const { body } = document;
+// localStorage changes
 
-let i = Number(localStorage.getItem(`i`));
+let i = Number(localStorage.getItem('i'));
 console.log(i);
 h1.innerText = `A taki licznik: ${String(i)}`;
 
 btn.addEventListener('click', () => {
-    const isDark = body.classList.toggle('dark-site');
-    h1.innerText = `A taki licznik: ${String(++i)}`
-    if (i < 20) {
-        if (isDark) {
-            btn.innerText = 'Turn to light mode';
-        } else {
-            btn.innerText = 'Turn to dark mode';
-        }
+  const isDark = body.classList.toggle('dark-site');
+  h1.innerText = `A taki licznik: ${String(++i)}`;
+  if (i < 20) {
+    if (isDark) {
+      btn.innerText = 'Turn to light mode';
     } else {
-        btn.innerText = '!Alert, you strucked a fire!'
-        body.classList.toggle('red-body');
+      btn.innerText = 'Turn to dark mode';
     }
-    localStorage.setItem('i', String(i));
-})
+  } else {
+    btn.innerText = '!Alert, you strucked a fire!';
+    body.classList.toggle('red-body');
+  }
+  localStorage.setItem('i', String(i));
+});

@@ -50,29 +50,28 @@
  * 4. Stwórz dwa obiekty reprezentujące 2 kraje i dodaj do nich kilka zajętych miejsc, używając przygotowanej przes siebie metody możesz ją wywoływac wielokrotnie).
  * 5.* Dodaj metodę, która sprawdzi czy kraj posiada jakiekolwiek pierwsze miejsce i jeżeli tak to wyświetl "Brawo!".
  */
-//Rozwiązanie YuGi - problem z undefined
+// Rozwiązanie YuGi - problem z undefined
 class Country {
+  constructor(nameCountry) {
+    this.name = nameCountry;
+    this.medals = [];
+  }
 
-    constructor(nameCountry) {
-        this.name = nameCountry;
-        this.medals = [];
-    }
-    addMedal(score) {
-        return this.medals.push(score);
-    }
+  addMedal(score) {
+    return this.medals.push(score);
+  }
 
-    checkGoldMedal() {
-        this.medals.forEach(el => {
-            if (el === 'gold') {
-                return console.log(this.name + ' Gratulacje mamy złoto :)')
-            }
-        })
-    }
-
+  checkGoldMedal() {
+    this.medals.forEach((el) => {
+      if (el === 'gold') {
+        return console.log(`${this.name} Gratulacje mamy złoto :)`);
+      }
+    });
+  }
 }
 
 const poland = new Country('Poland');
-const russia = new Country('ZSRR')
+const russia = new Country('ZSRR');
 
 poland.addMedal('gold');
 russia.addMedal('silver');
@@ -81,8 +80,7 @@ russia.addMedal('bronze');
 poland.addMedal('silver');
 russia.addMedal('gold');
 
-
-poland.checkGoldMedal()
-russia.checkGoldMedal()
-console.log(poland)
-console.log(russia)
+poland.checkGoldMedal();
+russia.checkGoldMedal();
+console.log(poland);
+console.log(russia);
