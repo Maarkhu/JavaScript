@@ -208,7 +208,6 @@
     "tsutils": "^3.21.0",
     "type-check": "^0.4.0",
     "type-fest": "^0.20.2",
-    "typescript": "^4.7.2",
     "unbox-primitive": "^1.0.2",
     "uri-js": "^4.4.1",
     "v8-compile-cache": "^2.3.0",
@@ -223,9 +222,10 @@
   "devDependencies": {
     "@babel/core": "^7.18.2",
     "@babel/eslint-parser": "^7.18.2",
-    "@typescript-eslint/eslint-plugin": "^5.27.0",
-    "@typescript-eslint/parser": "^5.27.0",
-    "eslint": "^8.16.0",
+    "eslint": "^8.17.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-react": "^7.30.0",
     "standardx": "^7.0.0"
   },
