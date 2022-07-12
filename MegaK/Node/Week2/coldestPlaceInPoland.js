@@ -10,8 +10,8 @@ const processWeatherData = async data => {
      } return 0;
 })
  const {temperatura: temperature,
-    stacja: station} = sorted[0];
-  console.log(`Higher temperature ${temperature} C deg is in ${station}`);
+    stacja: station} = sorted[sorted.length - 1];
+  console.log(`Lower temperature ${temperature} C deg is in ${station}.`);
 };
 
 const findWarmestPlaceInPoland = async () => {

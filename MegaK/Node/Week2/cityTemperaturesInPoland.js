@@ -9,9 +9,9 @@ const processWeatherData = async data => {
          return -1;
      } return 0;
 })
- const {temperatura: temperature,
-    stacja: station} = sorted[0];
-  console.log(`Higher temperature ${temperature} C deg is in ${station}`);
+  sorted.forEach((element) => {const {stacja, temperatura} = element;
+    console.log(stacja, temperatura)})
+
 };
 
 const findWarmestPlaceInPoland = async () => {
