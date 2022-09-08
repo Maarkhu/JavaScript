@@ -1,6 +1,6 @@
 const {promisify} = require('util');
 const {createCipheriv} = require('crypto');
-const {createDecipheriv} = require('crypto');
+const {createDecipheriv, createHmac} = require('crypto');
 const scrypt = promisify(require('crypto').scrypt);
 const randomBytes = promisify(require('crypto').randomBytes);
 
@@ -12,7 +12,7 @@ async function encryptText(text, pwd, salt) {
   const cipher = createCipheriv(algorithm, key, iv);
   let encrypted = cipher.update(text, 'utf8', 'hex');
   encrypted += cipher.final('hex')
-  return { encrypted, iv: iv.toString('hex'), };
+  return {encrypted, iv: iv.toString('hex')};
 };
 
 async function decryptText(encrypted, pwd, salt, ivHex) {
@@ -22,10 +22,18 @@ async function decryptText(encrypted, pwd, salt, ivHex) {
   const decipher = createDecipheriv(algorithm, key, iv);
   let decrypted = decipher.update(encrypted, 'hex', 'utf8');
   decrypted += decipher.final('utf8')
-  return {decrypted, iv};
+  return decrypted;
 };
 
-module.exports = {encryptText, decryptText};
+function hash(text, salt) {
+  return createHmac('sha512', salt)
+    .update(text)
+    .digest('hex');
+}
+
+module.exports = {encryptText,
+  decryptText,
+  hash,};
 
 // (async () => {
 //   await writeFile('./data/text.txt', pass);

@@ -1,26 +1,14 @@
 const {promisify} = require('util');
-const {createCipheriv} = require('crypto');
-const scrypt = promisify(require('crypto').scrypt);
-const randomBytes = promisify(require('crypto').randomBytes);
-const {writeFile} = require('fs').promises;
-
-
-const algorithm = 'aes-192-cbc';
+const {writeFile, readFile} = require('fs').promises;
+const {encryptText, hash} = require('./cipher');
 const [,,fileName, pwd]  = process.argv;
-const salt = 'hhkjHKKH&(&)&^^&*^(^&^(^669860,./';
+const {ENCRIPTION_SALT, HASH_SALT} = require('./constants');
+
 
 (async () => {
-  const key = await scrypt(pwd, salt, 24);
-  const iv = await randomBytes(16);
-  const cipher = createCipheriv(algorithm, key, iv);
-  let encrypted = cipher.update('Klap, klap, klap', 'utf8', 'hex');
-  encrypted += cipher.final('hex')
-  console.log({encrypted, iv: iv.toString('hex'),});
-  await writeFile(`./data/${fileName}`, JSON.stringify({pwd, encrypted, iv: iv.toString('hex'),}))
+  const text = await readFile(`./data/${fileName}`, 'utf8');
+  const textHash = hash(text, HASH_SALT);
+  const encrypted = await encryptText(text, pwd, ENCRIPTION_SALT);
+  encrypted.hash = textHash;
+  await writeFile(`./data/${fileName}`, JSON.stringify(encrypted), 'utf8');
 })();
-
-// (async () => {
-//   await writeFile('./data/text.txt', pass);
-// })();
-
-
