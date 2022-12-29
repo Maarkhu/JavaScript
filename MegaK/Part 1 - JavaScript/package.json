@@ -2,7 +2,7 @@
   "name": "javascript",
   "version": "1.0.0",
   "description": "JavaScript learning",
-  "main": "../Node/index.js",
+  "main": "../Node/Week2/index.js",
   "dependencies": {
 
   },

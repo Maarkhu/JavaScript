@@ -14,7 +14,7 @@ const processWeatherData = async data => {
   console.log(`Lower temperature ${temperature} C deg is in ${station}.`);
 };
 
-const findWarmestPlaceInPoland = async () => {
+const findColdestPlaceInPoland = async () => {
   try{
   const res = await fetch('https://danepubliczne.imgw.pl/api/data/synop')
   const data = await res.json()
@@ -23,4 +23,4 @@ const findWarmestPlaceInPoland = async () => {
     console.log(`Hey, it's ana error maan:`, error);
   }}
 
-findWarmestPlaceInPoland();
+findColdestPlaceInPoland();
