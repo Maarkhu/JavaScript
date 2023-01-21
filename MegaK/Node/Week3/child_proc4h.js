@@ -1,12 +1,15 @@
 const { promisify } = require('util');
 const exec = promisify(require('child_process').exec);
 
+const prog = process.argv;
+if(prog.length !== 3) {
+  console.log('Pierdu')
+}
+
 (async () => {
   try {
-    const prog = process.argv[2];
-    console.log(process.argv)
     if (prog === ('Kalkulator' && 'kalkulator')) {
-      const { stdout } = await exec(`calc.exe`);
+      const { stdout } = await exec(`calc.exe`, );
       console.log('Kalkulator', stdout);
     } else if ( prog === ('Paint' && 'paint')) {
       const { stdout } = await exec(`mspaint.exe`);
